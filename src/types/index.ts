@@ -7,6 +7,8 @@ export interface HistoricalEvent {
   imageUrl?: string;
   additionalContext?: string;
   byline?: string;
+  sources?: string;
+  historicalContext?: string;
 }
 
 export type NewsCategoryType = 'politics' | 'international' | 'local' | 'entertainment' | 'sports' | 'weather' | 'business' | 'technology' | 'science';

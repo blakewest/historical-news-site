@@ -23,10 +23,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
     const loadImage = async () => {
       if (article.imagePrompt && !article.imageUrl) {
         try {
-          const url = await ImageService.generateImage(article.imagePrompt);
+          console.log('Generating AI image for article:', article.title);
+          // Pass the full article data to generate more contextual images
+          const url = await ImageService.generateImage(article.imagePrompt, article);
           setImageUrl(url);
+          console.log('Image generated successfully for:', article.title);
         } catch (error) {
-          console.error('Failed to generate image:', error);
+          console.error('Failed to generate image for article:', article.title, error);
         }
       }
     };
