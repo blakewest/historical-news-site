@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: theme('colors.newspaper-light');
+  color: theme('colors.newspaper-black');
+  line-height: 1.5;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.serif');
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: theme('fontFamily.body');
+    line-height: 1.6;
+  }
+
+  time {
+    font-family: theme('fontFamily.sans');
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  .newspaper-divider {
+    @apply h-px w-full bg-gray-300 my-4;
+  }
+
+  .article-text {
+    @apply font-body leading-relaxed;
+  }
+
+  .headline {
+    @apply font-serif text-headline font-bold leading-tight;
+  }
+
+  .subheadline {
+    @apply font-serif text-subhead leading-snug;
+  }
+
+  .byline {
+    @apply text-sm uppercase tracking-wider font-sans text-newspaper-mid my-2;
+  }
+
+  .column {
+    @apply p-4;
+  }
+
+  .article-card {
+    @apply bg-white p-5 rounded shadow-newspaper mb-6 transition-all duration-300;
+  }
+
+  .article-card:hover {
+    @apply shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-newspaper-dark text-white px-4 py-2 rounded shadow hover:bg-newspaper-black transition-colors duration-200;
+  }
+
+  .context-button {
+    @apply text-sm underline text-blue-800 cursor-pointer hover:text-blue-600;
+  }
+}
